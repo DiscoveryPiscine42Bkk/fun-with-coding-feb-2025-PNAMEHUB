@@ -1,0 +1,11 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+.col1 {
+    background-color: aquamarine;
+}
+.col2 {
+    background-color: pink;
+}
