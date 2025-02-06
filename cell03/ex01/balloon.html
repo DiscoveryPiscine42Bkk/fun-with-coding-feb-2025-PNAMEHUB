@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cell3_ex01</title>
+    </head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            transition: width 0.3s, height 0.3s, background-color 0.3s ease;
+        }
+    </style>
+    <body>
+        <div class="balloon"></div>
+        <script>
+            const balloon = document.querySelector(".balloon");
+            let size = 200;
+            const bColors = ["red", "green", "blue"];
+            let colorIdx = 0;
+    
+            balloon.addEventListener("click", function() { 
+                if (size >= 400) { 
+                    size = 200;
+                    colorIdx = 0;
+                } else {
+                    size += 10;
+                    colorIdx = (colorIdx + 1) % bColors.length;
+                }
+                updateBalloon();
+            });
+    
+            balloon.addEventListener("mouseleave", function() {
+                if (size > 200) {
+                    size -= 5;
+                    colorIdx = (colorIdx - 1 + bColors.length) % bColors.length;  
+                }
+                updateBalloon();
+            });
+    
+            function updateBalloon() {
+                balloon.style.width = size + "px";
+                balloon.style.height = size + "px";
+                balloon.style.backgroundColor = bColors[colorIdx];
+            }
+        </script>
+    </body>
+</html>
