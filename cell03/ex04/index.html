@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Local Task Manager</title>
+    </head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                width: 320px;
+                background: white;
+                border-radius: 5px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #ft_list {
+                width: 100%;
+                border: 1px solid #000;
+                min-height: 100px;
+                background-color: white;
+                margin-top: 10px;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .task {
+                width: 90%;
+                margin: 5px 0;
+                background-color: coral;
+                cursor: pointer;
+                border-radius: 3px;
+                text-align: center;
+            }
+            button {
+                width: 150px;
+                margin-top: 10px;
+                background-color :aqua;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: antiquewhite;
+            }
+        </style>
+<body>
+    <div class="container">
+        <button onclick="addTask()">New</button>
+        <div id="ft_list"></div>
+    </div>
+    
+    <script src="todo.js" defer></script>
+</body>
+</html>
